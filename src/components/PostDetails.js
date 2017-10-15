@@ -53,11 +53,11 @@ class PostDetails extends Component {
                   onClick={() => { this.props.voteForPost(this.props.post.id, "downVote") }}></i>
                 <h5>{this.props.post.voteScore}</h5>
                 <i className="fa fa-thumbs-o-up fa-2x text-muted" aria-hidden="true" onClick={() => { this.props.voteForPost(this.props.post.id, "upVote") }}></i>
+                <section className="buttons">
+                  <button onClick={this.deletePostHelper} className="btn text-xs-right">Delete</button>
+                  <Link to={`/edit/${this.props.post.id}`} className="btn text-xs-right">Edit</Link>
+                </section>
               </div>
-              <section className="buttons">
-                <button onClick={this.deletePostHelper} className="btn text-xs-right">Delete</button>
-                <Link to={`/edit/${this.props.post.id}`} className="btn text-xs-right">Edit</Link>
-              </section>
             </div>
           </div>
         </section>

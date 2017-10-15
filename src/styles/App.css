@@ -109,3 +109,12 @@ h1 {
 i {
     margin: 0 10px;
 }
+
+.top-margin {
+    margin: 10px 0;
+}
+
+.comments ul {
+    margin: 50px 0;
+    padding: 20px 0;
+}

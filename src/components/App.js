@@ -60,7 +60,7 @@ class App extends Component {
               <ul className="list-group">
                 {this.renderPosts()}
               </ul>
-              <Link to='/posts/new' className="btn create">Create post</Link>
+              <Link to='/posts/new' className="btn top-margin">Create post</Link>
             </section>
             <section className="categories col-sm-2">
               <h1>categories</h1>

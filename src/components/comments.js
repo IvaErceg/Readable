@@ -64,7 +64,7 @@ class CommentList extends Component {
                 <h5>{comment.voteScore}</h5>
                 <button onClick={() => { this.props.voteForComment(comment.id, "upVote", () => this.props.getComments(this.props.parentId)) }} className="btn">+</button>
                 <button className="btn btn-primary" onClick={() => this.props.deleteComment(comment.id, () => this.props.getComments(this.props.parentId))}>Delete</button>
-                <Link to={`/comments/${comment.id}`} className="btn btn-primary">Edit</Link>
+                <Link to={`/comments/${comment.id}`} className="btn">Edit</Link>
             </li>)
         }))
     }
@@ -77,9 +77,9 @@ class CommentList extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <input placeholder="Your name" className="form-control" value={this.state.author} onChange={this.onAuthorChange} type="text" name="author" id="author" />
                     <textarea rows="5" placeholder="Your comment" className="form-control" value={this.state.body} onChange={this.onContentChange} type="text" name="content" id="content"></textarea>
-                    <button className="btn">Add Comment</button>
+                    <button className="btn top-margin">Add Comment</button>
                 </form>
-                <div className="form-inline">
+                <div className="form-inline pull-right">
                     <select className="form-control" onChange={e => this.props.orderComments(e.target.value)}>
                         <option value='timestamp'>Sort by date</option>
                         <option value='voteScore'>Sort by votes</option>

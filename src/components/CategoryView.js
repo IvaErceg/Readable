@@ -33,7 +33,7 @@ class CategoryView extends Component {
                             })}
 
                         </ul>
-                        <Link to='/' className="btn">Home</Link>
+                        <Link to='/' className="btn top-margin">Home</Link>
                     </section>
                 </div>
             </div>
