@@ -1,0 +1,111 @@
+body {
+    background-color: #009688;
+    font-family: 'Tahoma';
+    color: white;
+}
+
+.container h1 {
+    margin-top: 50px;
+}
+
+.btn {
+    background-color: #FE5722;
+    border-color:  #FE5722;
+    color: white;
+}
+
+.list-group-item p {
+    flex: 1;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: #E54A19;
+}
+
+.btn:hover {
+    background-color: #E54A19;
+    border-color: #E54A19;
+    color: white;
+}
+header {
+    background-color: #00796B;
+    padding: 30px;
+    color: white;
+    text-transform: uppercase;
+  
+}
+
+.category {
+    background-color: #00796B;
+    padding: 5px;
+    color: white;
+    float: right;
+    width: 100px;
+    text-align:  center;
+    margin-left: 10px;
+}
+
+.main-header h1{
+    margin-left: 50px;
+    font-size: 60px;
+    font-weight: 800
+}
+
+
+.comments a {
+    float: right;
+}
+
+.posts li, .comments li {
+    align-items: baseline;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.posts li h4 {
+    margin: auto
+}
+
+.post {
+    margin-top: 100px;
+    color: black;
+}
+
+label {
+    font-size: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.categories li {
+    font-style: italic;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 10px 20px;
+}
+
+.buttons {
+    margin-left: auto;
+}
+
+.btn {
+    margin: 0 10px;
+}
+
+i {
+    margin: 0 10px;
+}
