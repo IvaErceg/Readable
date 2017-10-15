@@ -2,13 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import promise from 'redux-thunk';
 import './styles/index.css';
 import App from './components/App';
 import CreatePost from './components/CreatePost';
 import EditPost from './components/EditPost';
-import CreateComment from './components/CreateComment.js'
 import EditComment from './components/EditComment.js'
 import PostDetails from './components/PostDetails';
 import CategoryView from './components/CategoryView'

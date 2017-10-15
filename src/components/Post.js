@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../styles/App.css';
 import { Link } from 'react-router-dom';
 import { getPosts } from '../actions';
 import { getCategories } from '../actions';
@@ -8,9 +7,6 @@ import { getComments } from '../actions';
 import { deletePost } from '../actions';
 import { orderPosts } from '../actions';
 import { connect } from 'react-redux';
-import _ from 'lodash';
-import Header from './Header';
-import FontAwesome from 'react-fontawesome';
 import { getCommentCount } from '../actions';
 
 class Post extends Component {
@@ -20,7 +16,7 @@ class Post extends Component {
 
     render() {
         return (
-            <li key={this.props.post.id}>
+            <li>
                 <div className="card mb-3">
                     <div className="card-block">
                         <h4 className="category">{this.props.post.category}</h4>

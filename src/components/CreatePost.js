@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
-import { Link } from 'react-router-dom';
 import { createPost } from '../actions';
 import { connect } from 'react-redux';
 import PostForm from './PostForm'

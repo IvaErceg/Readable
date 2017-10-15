@@ -3,9 +3,6 @@ import { ADD_COMMENT } from '../actions';
 import { EDIT_COMMENT } from '../actions';
 import { DELETE_COMMENT } from '../actions';
 import { COMMENT_VOTE } from '../actions';
-import { GET_COMMENT_COUNT } from '../actions';
-import _ from 'lodash'
-
 
 export default function (state = [], action) {
     switch (action.type) {

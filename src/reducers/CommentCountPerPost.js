@@ -1,5 +1,4 @@
 import { GET_COMMENT_COUNT } from '../actions';
-import _ from 'lodash'
 
 export default function (state = 0, action) {
     switch (action.type) {

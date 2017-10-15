@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import uuid from 'uuid';
 
 
-class AddComment extends Component {
+class CommentForm extends Component {
 
 
 
@@ -62,4 +62,4 @@ class AddComment extends Component {
     }
 }
 
-export default AddComment;
+export default CommentForm;

@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import '../styles/App.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getPost } from '../actions';
 import { getComments } from '../actions';
 import { deletePost } from '../actions';
 import { voteForPost } from '../actions';
-import CommentList from './comments'
+import CommentList from './Comments'
 
 class PostDetails extends Component {
   componentDidMount() {

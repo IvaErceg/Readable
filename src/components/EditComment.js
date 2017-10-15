@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
 import { connect } from 'react-redux';
-import AddComment from './AddComment'
+import CommentForm from './CommentForm'
 import { editComment } from '../actions';
 
 class EditComment extends Component {
@@ -9,7 +9,7 @@ class EditComment extends Component {
     render() {
         return (
             <div>
-                <AddComment title="Edit Comment" comment = {this.props.comment} onSubmit={(comment) => this.props.editComment(comment.id, comment, () => this.props.history.push(`/posts/${comment.parentId}`))} />
+                <CommentForm title="Edit Comment" comment = {this.props.comment} onSubmit={(comment) => this.props.editComment(comment.id, comment, () => this.props.history.push(`/posts/${comment.parentId}`))} />
             </div>
 
 
