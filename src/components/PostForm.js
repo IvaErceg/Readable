@@ -70,7 +70,7 @@ class PostForm extends Component {
                         <label htmlFor="title">Content</label>
                         <textarea rows="10" className="form-control" value={this.state.body} onChange={this.onContentChange} type="text" name="content" id="content"></textarea>
                         <button className="btn top-margin" type="submit top-margin">Save</button>
-                        <Link to={`/posts/${this.state.id}`} className="btn top-margin">Cancel</Link>
+                        <Link to={`/`} className="btn top-margin">Cancel</Link>
                     </div>
                 </form>
             </div>

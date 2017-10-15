@@ -46,8 +46,6 @@ class App extends Component {
       <div>
         <Header />
         <div className="container">
-          <div className="row">
-            <section className="posts col-sm-10">
               <h1>Posts</h1>
               <div className="form-inline">
                 <select className="form-control" onChange={e => this.props.orderPosts(e.target.value)}>
@@ -57,13 +55,14 @@ class App extends Component {
                   <option value='name'>Sort by title</option>
                 </select>
               </div>
+              <div className="row">
+              <section className="posts col-md-9">
               <ul className="list-group">
                 {this.renderPosts()}
               </ul>
               <Link to='/posts/new' className="btn top-margin">Create post</Link>
             </section>
-            <section className="categories col-sm-2">
-              <h1>categories</h1>
+            <section className="categories col-md-3">
               <ul>
                 {this.renderCategories()}
               </ul>
