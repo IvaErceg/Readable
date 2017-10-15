@@ -11,7 +11,7 @@ class PostForm extends Component {
     state = {
         title: this.props.post ? this.props.post.title : "",
         author: this.props.post ? this.props.post.author : "",
-        category: this.props.post ? this.props.post.category : "",
+        category: this.props.post ? this.props.post.category : "react",
         body: this.props.post ? this.props.post.body : "",
         timestamp: this.props.post ? this.props.post.timestamp : Date.now(),
         id: this.props.post ? this.props.post.id : uuid()
@@ -64,7 +64,13 @@ class PostForm extends Component {
                     </div>
                     <div className="form-group">
                         <label htmlFor="author">Category</label>
-                        <input className="form-control" value={this.state.category} onChange={this.onCategoryChange} type="text" name="category" id="category" />
+                        <div className="form-inline">
+                        <select className="form-control" name="category" id="category" onChange={this.onCategoryChange}>
+                          <option value='react'>React</option>
+                          <option value='redux'>Redux</option>
+                          <option value='udacity'>Udacity</option>
+                        </select>
+                      </div>
                     </div>
                     <div className="form-group">
                         <label htmlFor="title">Content</label>

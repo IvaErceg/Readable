@@ -41,6 +41,7 @@ class PostDetails extends Component {
               </ul>
             </div>
             <div className="card-block">
+              <h4 className="category">{this.props.post.category}</h4>
               <h1 className="card-title">{this.props.post.title}</h1>
               <h4>By {this.props.post.author}</h4>
               <h6 className="text-right">{this.getTime(this.props.post.timestamp)}</h6>
