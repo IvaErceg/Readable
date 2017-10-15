@@ -53,8 +53,8 @@ class AddComment extends Component {
                     <div className="form-group">
                         <label htmlFor="title">Content</label>
                         <textarea rows="10" className="form-control" value={this.state.body} onChange={this.onContentChange} type="text" name="content" id="content"></textarea>
-                        <button className="btn" type="submit">Save</button>
-                        <Link to="/" className="btn">Cancel</Link>
+                        <button className="btn top-margin" type="submit">Save</button>
+                        <Link to={`/posts/${this.state.parentId}`} className="btn top-margin">Cancel</Link>
                     </div>
                 </form>
             </div>

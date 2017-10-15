@@ -11,7 +11,7 @@ class EditPost extends Component {
     render() {
         return (
             <div>
-            <PostForm title="Edit Post" post={this.props.post} onSubmit={(post) => this.props.editPost(post.id, post, () => this.props.history.push('/'))}/>
+            <PostForm title="Edit Post" post={this.props.post} onSubmit={(post) => this.props.editPost(post.id, post, () => this.props.history.push(`/posts/${post.id}`))}/>
         </div>
         
         

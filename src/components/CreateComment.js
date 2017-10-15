@@ -10,7 +10,7 @@ class CreateComment extends Component {
     render() {
         return (
             <div>
-            <AddComment title="Add Comment" parentId={this.props.parentId} onSubmit={(comment) => this.props.addComment(comment, () => this.props.history.push('/posts'))} />
+                <AddComment title="Add Comment" parentId={this.props.parentId} onSubmit={(comment) => this.props.addComment(comment, () => this.props.history.push(`/posts/${this.props.parentId}`))} />
             </div>)
     }
 }

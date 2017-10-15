@@ -57,15 +57,24 @@ class CommentList extends Component {
     renderComments = () => {
         const comments = _.orderBy(this.props.comments, this.props.order, "desc");
         return (comments.map(comment => {
-            return (<li key={comment.id} className="list-group-item">
-                <p>{comment.body}</p>
-                <p>By {comment.author}</p>
-                <button onClick={() => { this.props.voteForComment(comment.id, "downVote", () => this.props.getComments(this.props.parentId)) }} className="btn">-</button>
-                <h5>{comment.voteScore}</h5>
-                <button onClick={() => { this.props.voteForComment(comment.id, "upVote", () => this.props.getComments(this.props.parentId)) }} className="btn">+</button>
-                <button className="btn btn-primary" onClick={() => this.props.deleteComment(comment.id, () => this.props.getComments(this.props.parentId))}>Delete</button>
-                <Link to={`/comments/${comment.id}`} className="btn">Edit</Link>
-            </li>)
+            return (<li className="comment-list" key={comment.id}>
+                <div className="card mb-3">
+                    <div className="card-block">
+                        <p className="card-text">{comment.body}</p>
+                        <p className="card-text text-muted">By {comment.author}</p>
+                        <div className="row bottom">
+                            <i className="fa fa-thumbs-o-down fa-2x text-muted " aria-hidden="true"
+                                onClick={() => { this.props.voteForComment(comment.id, "downVote", () => this.props.getComments(this.props.parentId)) }}></i>
+                            <h5>{comment.voteScore}</h5>
+                            <i className="fa fa-thumbs-o-up text-muted fa-2x" aria-hidden="true" onClick={() => { this.props.voteForComment(comment.id, "upVote", () => this.props.getComments(this.props.parentId)) }}></i>
+                            <section className="buttons">
+                                <button onClick={() => this.props.deleteComment(comment.id, () => this.props.getComments(this.props.parentId))} className="btn text-xs-right">Delete</button>
+                                <Link to={`/comments/${comment.id}`} className="btn">Edit</Link>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </li >)
         }))
     }
 
@@ -95,7 +104,6 @@ class CommentList extends Component {
 
 
 function mapStateToProps(state, ownProps) {
-    console.log(state, ownProps)
     return {
         comments: state.comments,
         order: state.sortOrder
