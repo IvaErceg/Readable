@@ -11,8 +11,6 @@ export default function (state = [], action) {
     switch (action.type) {
         case GET_COMMENTS:
             return action.payload;
-        case GET_COMMENT_COUNT:
-        return (_.mapKeys(action.payload, "parentId"));
         case ADD_COMMENT:
             return state.concat(action.payload)
         case DELETE_COMMENT:

@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getPost } from '../actions';
 import { getComments } from '../actions';
 import { deletePost } from '../actions';
+import { voteForPost } from '../actions';
 import CommentList from './comments'
 
 class PostDetails extends Component {
@@ -31,26 +32,36 @@ class PostDetails extends Component {
 
     return (
       <div className="container">
-      <section className="post">
-        <div className="card text-center">
-          <div className="card-header">
-            <ul className="nav nav-pills card-header-pills">
-              <li className="nav-item">
-                <Link className="nav-link-active" to='/'>Back to Index</Link>
-              </li>
-            </ul>
+        <section className="post">
+          <div className="card text-center">
+            <div className="card-header">
+              <ul className="nav nav-pills card-header-pills">
+                <li className="nav-item">
+                  <Link className="nav-link-active" to='/'>Back to Index</Link>
+                </li>
+              </ul>
+            </div>
+            <div className="card-block">
+              <h1 className="card-title">{this.props.post.title}</h1>
+              <h4>By {this.props.post.author}</h4>
+              <h6 className="text-right">{this.getTime(this.props.post.timestamp)}</h6>
+              <p className="card-text">{this.props.post.body}</p>
+              <div className="row bottom">
+                <h5>{this.props.comments.length}</h5>
+                <i className="fa fa-comment-o fa-2x text-muted" aria-hidden="true"></i>
+                <i className="fa fa-thumbs-o-down fa-2x text-muted " aria-hidden="true"
+                  onClick={() => { this.props.voteForPost(this.props.post.id, "downVote") }}></i>
+                <h5>{this.props.post.voteScore}</h5>
+                <i className="fa fa-thumbs-o-up fa-2x text-muted" aria-hidden="true" onClick={() => { this.props.voteForPost(this.props.post.id, "upVote") }}></i>
+              </div>
+              <section className="buttons">
+                <button onClick={this.deletePostHelper} className="btn text-xs-right">Delete</button>
+                <Link to={`/edit/${this.props.post.id}`} className="btn text-xs-right">Edit</Link>
+              </section>
+            </div>
           </div>
-          <div className="card-block">
-            <h1 className="card-title">{this.props.post.title}</h1>
-            <h4>By {this.props.post.author}</h4>
-            <h6 className="text-right">{this.getTime(this.props.post.timestamp)}</h6>
-            <p className="card-text">{this.props.post.body}</p>
-            <button onClick={this.deletePostHelper} className="btn text-xs-right">Delete</button>
-            <Link to={`/edit/${this.props.post.id}`} className="btn text-xs-right">Edit</Link>
-          </div>
-        </div>
         </section>
-        <CommentList parentId={this.props.post.id}/>
+        <CommentList parentId={this.props.post.id} />
       </div>
     );
   }
@@ -63,4 +74,4 @@ function mapStateToProps(state, ownProps) {
   }
 }
 
-export default connect(mapStateToProps, { getPost, deletePost, getComments})(PostDetails);
+export default connect(mapStateToProps, { getPost, deletePost, getComments, voteForPost })(PostDetails);

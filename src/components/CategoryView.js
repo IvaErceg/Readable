@@ -7,6 +7,7 @@ import Header from './Header';
 import { voteForPost } from '../actions';
 import { getComments } from '../actions';
 import { deletePost } from '../actions';
+import Post from './Post';
 
 class CategoryView extends Component {
 
@@ -28,15 +29,7 @@ class CategoryView extends Component {
                         <h2>Category: {this.props.match.params.category}</h2>
                         <ul className="list-group">
                             {_.map(this.props.categoryPosts, post => {
-                                return (<li key={post.title} className="list-group-item">
-                                    <Link to={`/posts/${post.id}`}><h3>{post.title}</h3></Link>
-                                    <h4>{post.author}</h4>
-                                    <button onClick={() => { this.props.voteForPost(post.id, "downVote") }} className="btn">-</button>
-                                    <h5>{post.voteScore}</h5>
-                                    <button onClick={() => { this.props.voteForPost(post.id, "upVote") }} className="btn">+</button>
-                                    <button onClick={() => this.props.deletePost(post.id, () => this.props.getPosts())} className="btn text-xs-right">Delete</button>
-                                    <Link to={`/edit/${post.id}`} className="btn text-xs-right">Edit</Link>
-                                </li>)
+                                return (<Post post={post}/>)
                             })}
 
                         </ul>
