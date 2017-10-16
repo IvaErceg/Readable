@@ -7,7 +7,7 @@ All state (except on the forms - controlled components) is managed by **Redux**.
 # How to run:
 
 ## Backend server:
-1. Clone or download repository from 
+1. Clone or download repository from https://github.com/udacity/reactnd-project-readable-starter
 2. npm install to get dependencies
 3. Start the server by navigating to the folder where the server.js is and run node server.js
 
