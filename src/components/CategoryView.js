@@ -15,8 +15,6 @@ class CategoryView extends Component {
         this.props.getPosts();
     }
 
-
-
     render() {
         if (!this.props.categoryPosts) {
             return (<div>Loading...</div>)
@@ -29,7 +27,7 @@ class CategoryView extends Component {
                         <h2>Category: {this.props.match.params.category}</h2>
                         <ul className="list-group">
                             {_.map(this.props.categoryPosts, post => {
-                                return (<Post post={post} key={post.id}  />)
+                                return (<Post post={post} key={post.id} />)
                             })}
 
                         </ul>
@@ -39,8 +37,6 @@ class CategoryView extends Component {
             </div>
         )
     }
-
-
 }
 
 function mapStateToProps(state, ownProps) {
@@ -48,7 +44,5 @@ function mapStateToProps(state, ownProps) {
         categoryPosts: _.filter(state.posts, post => post.category === ownProps.match.params.category)
     }
 }
-
-
 
 export default connect(mapStateToProps, { getPosts, voteForPost, getComments, deletePost })(CategoryView);
