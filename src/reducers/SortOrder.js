@@ -1,4 +1,3 @@
-
 import { SORT_POSTS } from '../actions';
 import { SORT_COMMENTS } from '../actions';
 

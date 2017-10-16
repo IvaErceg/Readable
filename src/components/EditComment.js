@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import '../styles/App.css';
 import { connect } from 'react-redux';
 import CommentForm from './CommentForm'
-import { editComment } from '../actions';
+import { editComment } from '../actions/comments';
 
 class EditComment extends Component {
 

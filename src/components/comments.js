@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { deleteComment } from '../actions';
-import { getComments } from '../actions';
-import { addComment } from '../actions';
-import { voteForComment } from '../actions';
+import { deleteComment } from '../actions/comments';
+import { getComments } from '../actions/comments';
+import { addComment } from '../actions/comments';
+import { voteForComment } from '../actions/comments';
 import { connect } from 'react-redux';
-import { orderComments } from '../actions';
+import { orderComments } from '../actions/comments';
 import uuid from 'uuid';
 import _ from 'lodash';
 

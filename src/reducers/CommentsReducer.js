@@ -16,8 +16,6 @@ export default function (state = [], action) {
             return [...state, ...action.payload];
         case COMMENT_VOTE:
             return [...state, ...action.payload];
-
-
         default:
             return state;
     }

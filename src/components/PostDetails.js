@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getPost } from '../actions';
-import { getComments } from '../actions';
-import { deletePost } from '../actions';
-import { voteForPost } from '../actions';
+import { getPost } from '../actions/posts';
+import { getComments } from '../actions/comments';
+import { deletePost } from '../actions/posts';
+import { voteForPost } from '../actions/posts';
 import CommentList from './Comments'
 
 class PostDetails extends Component {

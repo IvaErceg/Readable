@@ -5,7 +5,7 @@ import { DELETE_POST } from '../actions';
 import { EDIT_POST } from '../actions';
 import { POST_VOTE } from '../actions';
 
-
+//ideas from Stephen Grinder's Modern React with Redux course
 export default function (state = {}, action) {
     const post = action.payload;
     switch (action.type) {

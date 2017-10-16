@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { getPosts } from '../actions';
-import { getCategories } from '../actions';
-import { voteForPost } from '../actions';
-import { getComments } from '../actions';
-import { deletePost } from '../actions';
-import { orderPosts } from '../actions';
+import { getPosts } from '../actions/posts';
+import { getCategories } from '../actions/categories';
+import { voteForPost } from '../actions/posts';
+import { getComments } from '../actions/comments';
+import { deletePost } from '../actions/posts';
+import { orderPosts } from '../actions/posts';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import Header from './Header';
-import { getCommentCount } from '../actions';
+import { getCommentCount } from '../actions/comments';
 import Post from './Post.js'
 
 class PostList extends Component {
@@ -19,11 +19,8 @@ class PostList extends Component {
     this.props.getCategories();
   }
 
-
   renderPosts() {
     const posts = _.orderBy(this.props.posts, this.props.order, "desc");
-    this.props.getCommentCount()
-
     return _.map(posts, post => {
       return (
         <Post post={post} key={post.id} />
@@ -78,7 +75,6 @@ function mapStateToProps(state) {
     categories: state.categories,
     order: state.sortOrder,
     comments: state.comments,
-    commentCount: state.commentCount
   }
 }
 

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import '../styles/App.css';
 import { Link } from 'react-router-dom';
-import { addComment } from '../actions';
+import { addComment } from '../actions/comments';
 import { connect } from 'react-redux';
 import CommentForm from './CommentForm';
 

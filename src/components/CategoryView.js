@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { getPosts } from '../actions';
+import { getPosts } from '../actions/posts';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import { Link } from 'react-router-dom';
 import Header from './Header';
-import { voteForPost } from '../actions';
-import { getComments } from '../actions';
-import { deletePost } from '../actions';
+import { voteForPost } from '../actions/posts';
+import { getComments } from '../actions/comments';
+import { deletePost } from '../actions/posts';
 import Post from './Post';
 
 class CategoryView extends Component {
@@ -29,7 +29,7 @@ class CategoryView extends Component {
                         <h2>Category: {this.props.match.params.category}</h2>
                         <ul className="list-group">
                             {_.map(this.props.categoryPosts, post => {
-                                return (<Post post={post}/>)
+                                return (<Post post={post} />)
                             })}
 
                         </ul>

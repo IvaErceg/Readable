@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { getPosts } from '../actions';
-import { getCategories } from '../actions';
-import { voteForPost } from '../actions';
-import { getComments } from '../actions';
-import { deletePost } from '../actions';
-import { orderPosts } from '../actions';
+import { getPosts } from '../actions/posts';
+import { getCategories } from '../actions/categories';
+import { voteForPost } from '../actions/posts';
+import { getComments } from '../actions/comments';
+import { deletePost } from '../actions/posts';
+import { orderPosts } from '../actions/posts';
 import { connect } from 'react-redux';
-import { getCommentCount } from '../actions';
+import { getCommentCount } from '../actions/comments';
 
 class Post extends Component {
-
     componentDidMount() {
-    }
+    this.props.getCommentCount(this.props.post.id);}
 
     render() {
         return (
@@ -24,7 +23,7 @@ class Post extends Component {
                         <p className="card-text">{this.props.post.body.slice(0, 170).concat("...")}</p>
                         <p className="card-text"><small className="text-muted">By {this.props.post.author}</small></p>
                         <div className="row bottom">
-                            <h5>{this.props.commentCount}</h5>
+                            <h5>{this.props.commentCount[this.props.post.id]}</h5>
                             <i className="fa fa-comment-o fa-2x text-muted" aria-hidden="true"></i>
                             <i className="fa fa-thumbs-o-down fa-2x text-muted " aria-hidden="true"
                                 onClick={() => { this.props.voteForPost(this.props.post.id, "downVote") }}></i>
@@ -40,10 +39,9 @@ class Post extends Component {
         )
     }
 }
-function mapStateToProps(state, ownProps) {
-    console.log(state)
+function mapStateToProps(state) {
     return {
-        commentCount: state.commentCount
+        commentCount: state.commentCount.count
     }
 }
 
