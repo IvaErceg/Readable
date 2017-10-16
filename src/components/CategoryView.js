@@ -29,7 +29,7 @@ class CategoryView extends Component {
                         <h2>Category: {this.props.match.params.category}</h2>
                         <ul className="list-group">
                             {_.map(this.props.categoryPosts, post => {
-                                return (<Post post={post} />)
+                                return (<Post post={post} key={post.id}  />)
                             })}
 
                         </ul>
