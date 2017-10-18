@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import _ from 'lodash';
 import Header from './Header';
 import { getCommentCount } from '../actions/comments';
-import Post from './Post.js'
+import Post from './Post.js';
 
 class PostList extends Component {
 

@@ -5,7 +5,7 @@ import { getPost } from '../actions/posts';
 import { getComments } from '../actions/comments';
 import { deletePost } from '../actions/posts';
 import { voteForPost } from '../actions/posts';
-import CommentList from './Comments'
+import CommentList from './Comments';
 
 class PostDetails extends Component {
   componentDidMount() {
