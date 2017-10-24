@@ -16,7 +16,7 @@ export function getComments(id) {
     });
     return (dispatch) => {
         request.then(({ data }) => {
-            dispatch({ type: GET_COMMENTS, payload: data })
+            dispatch({ type: GET_COMMENTS, payload: data, id: id })
         });
     }
 }

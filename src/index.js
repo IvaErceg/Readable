@@ -24,7 +24,7 @@ ReactDOM.render(
                 <Route path="/posts/new" component={CreatePost}></Route>
                 <Route path="/edit/:id" component={EditPost}></Route>
                 <Route path="/:category/posts" component={CategoryView}></Route>
-                <Route path="/posts/:id" component={PostDetails}></Route>
+                <Route path="/:category/:id" component={PostDetails}></Route>
                 <Route path="/" component={App}></Route>
             </Switch>
         </BrowserRouter></Provider>, document.getElementById('root'));

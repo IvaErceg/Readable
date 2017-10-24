@@ -19,7 +19,7 @@ class Post extends Component {
                 <div className="card mb-3">
                     <div className="card-block">
                         <h4 className="category">{this.props.post.category}</h4>
-                        <Link to={`/posts/${this.props.post.id}`}><h3 className="card-title">{this.props.post.title}</h3></Link>
+                        <Link to={`/${this.props.post.category}/${this.props.post.id}`}><h3 className="card-title">{this.props.post.title}</h3></Link>
                         <p className="card-text">{this.props.post.body.slice(0, 170).concat("...")}</p>
                         <p className="card-text"><small className="text-muted">By {this.props.post.author}</small></p>
                         <div className="row bottom">
