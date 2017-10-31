@@ -15,9 +15,6 @@ class CommentList extends Component {
     state = {
         author: "",
         body: "",
-        timestamp: Date.now(),
-        id: uuid(),
-        parentId: this.props.parentId
     }
 
 
@@ -31,9 +28,9 @@ class CommentList extends Component {
             {
                 author: this.state.author,
                 body: this.state.body,
-                timestamp: this.state.timestamp,
-                id: this.state.id,
-                parentId: this.state.parentId
+                timestamp: Date.now(),
+                id: uuid(),
+                parentId: this.props.parentId
             }, () => this.props.getComments(this.props.parentId))
 
         this.setState({
