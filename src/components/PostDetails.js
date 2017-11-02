@@ -26,7 +26,14 @@ class PostDetails extends Component {
 
   render() {
     if (!this.props.post) {
-      return <div>Loading...</div>
+      return (
+      
+      <div  className="error">
+        <h2>404</h2>
+        <h3>Oops, this post doesn't exist anymore!</h3>
+        <a href="/">Take me to the posts</a>
+      </div>
+      )
     }
 
     return (

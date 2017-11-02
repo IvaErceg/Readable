@@ -5,8 +5,6 @@ import { editPost } from '../actions/posts';
 
 class EditPost extends Component {
 
-  
-
     render() {
         return (
             <div>
