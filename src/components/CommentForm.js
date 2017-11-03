@@ -9,24 +9,34 @@ class CommentForm extends Component {
 
 
     state = {
-        author: this.props.comment ? this.props.comment.author : "",
-        body: this.props.comment ? this.props.comment.body : "",
-        timestamp: this.props.comment ? this.props.comment.timestamp : Date.now(),
-        id: this.props.comment ? this.props.comment.id : uuid(),
-        parentId: this.props.comment["parentId"]
+        author: "",
+        body: "",
+        timestamp: Date.now(),
+        id: uuid(),
     }
 
+    componentDidMount() {
+        if (this.props.comment) {
+            this.setState({
+                author: this.props.comment.author,
+                body: this.props.comment.body,
+                timestamp: this.props.comment.timestamp,
+                id: this.props.comment.id,
+                parentId: this.props.comment["parentId"]
+            })
+        }
+    }
 
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.onSubmit(
             {
-            
+
                 author: this.state.author,
                 body: this.state.body,
                 timestamp: this.state.timestamp,
                 id: this.state.id,
-                parentId: this.state.parentId
+                parentId: this.props.comment["parentId"]
             })
     }
 

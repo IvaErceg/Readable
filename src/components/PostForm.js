@@ -6,17 +6,29 @@ import uuid from 'uuid';
 
 class PostForm extends Component {
 
-
-
     state = {
-        title: this.props.post ? this.props.post.title : "",
-        author: this.props.post ? this.props.post.author : "",
-        category: this.props.post ? this.props.post.category : "react",
-        body: this.props.post ? this.props.post.body : "",
-        timestamp: this.props.post ? this.props.post.timestamp : Date.now(),
-        id: this.props.post ? this.props.post.id : uuid()
+        title: "",
+        author: "",
+        category: "react",
+        body: "",
+        timestamp: Date.now(),
+        id: uuid()
     }
 
+    componentDidMount() {
+        if(this.props.post) {
+            this.setState({
+                title: this.props.post.title,
+                author: this.props.post.author,
+                category: this.props.post.category,
+                body: this.props.post.body,
+                timestamp: this.props.post.timestamp,
+                id: this.props.post.id
+            })
+        }
+    }
+
+ 
 
     handleSubmit = (e) => {
         e.preventDefault();
